@@ -63,7 +63,7 @@ static int compareEmployeePhone(const void *targetPtr, PtrToConstEmployee tableV
 
 static int compareEmployeeSalary(const void *targetPtr, PtrToConstEmployee tableValuePtr) 
 {
-    return strcmp((char *) targetPtr, tableValuePtr->salary);//const void *targetPtr ==> typecast as char pointer then pass into strcmp() 
+    return *(double *) targetPtr != tableValuePtr->salary;//const void *targetPtr ==> typecast as char pointer then pass into strcmp() 
 }
 
  
@@ -90,13 +90,13 @@ PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int size, char* name)
 
 } 
 
-PtrToEmployee searchEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char * targetPhoneNumber)
+PtrToEmployee searchEmployeeByPhone(PtrToConstEmployee ptr, int size, char * targetPhoneNumber)
 {
-    return searchEmployeeTable(ptr, size, name, compareEmployeePhone); 
+    return searchEmployeeTable(ptr, size, targetPhoneNumber, compareEmployeePhone); 
 }
 
-PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, char * targetPhoneNumber)
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int size, double sal)
 {
-    return searchEmployeeTable(ptr, size, name, compareEmployeeSalart); 
+    return searchEmployeeTable(ptr, size, &sal, compareEmployeeSalary); 
 }
 
