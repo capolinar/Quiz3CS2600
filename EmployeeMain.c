@@ -91,6 +91,36 @@ int main(void){
         printf("Employee Tony Bobcat is NOT found in the record by phone number \n");
     } 
 
+       //example added, found by  salary
+
+
+    matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, 6.34); 
+
+    if (matchPtr != NULL) {
+
+        printf("Employee Tony Bobcat is in record by salary %d\n", matchPtr - EmployeeTable); 
+    }
+
+    else {
+
+        printf("Employee Tony Bobcat is NOT found in the record by salary \n"); 
+    }
+
+        
+
+    //example added, not found by salary
+    matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, 25.99);
+
+    if (matchPtr != NULL) {
+
+        printf("Employee Tony Bobcat is in record by salary! %d\n", matchPtr - EmployeeTable); 
+    }
+
+    else {
+
+        printf("Employee Tony Bobcat is NOT found in the record by salary \n");
+    } 
+
 
 
      
