@@ -41,3 +41,20 @@ PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int tableSize, char *
     return NULL; 
 
 } 
+
+PtrToEmployee searchEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char * targetPhoneNumber){
+    const PtrToConstEmployee endPtr = ptr + tableSize; 
+
+    for(; ptr < endPtr; ptr++)  //search until end of table  ptr++ will increment by what?? 
+
+    { 
+
+        if(strcmp(ptr->phone,targetPhoneNumber) == 0) 
+
+            return (PtrToEmployee) ptr; 
+
+    } 
+
+    return NULL;
+
+} 
