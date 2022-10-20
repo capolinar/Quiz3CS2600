@@ -12,6 +12,10 @@ int main(void){
 
     PtrToEmployee searchEmployeeByName(const Employee table[], int sizeTable, char * nameToFind); 
 
+    PtrToEmployee searchEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char * targetPhoneNumber);
+
+    PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, double targetSalary)
+
  
 
     //defined in employeeTable.c 
@@ -51,6 +55,8 @@ int main(void){
     else 
 
         printf("Employee Tony Bobcat is NOT found in the record\n"); 
+
+
 
      
 
